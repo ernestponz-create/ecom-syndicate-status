@@ -1,0 +1,42 @@
+name: status-checks
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  issues: write
+concurrency: { group: status, cancel-in-progress: false }
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run checks
+        env:
+          CRM_DB_CHECK_URL: ${{ secrets.CRM_DB_CHECK_URL }}
+          CRM_DB_CHECK_KEY: ${{ secrets.CRM_DB_CHECK_KEY }}
+          LOCAL_AI_CHECK_URL: ${{ secrets.LOCAL_AI_CHECK_URL }}
+          LOCAL_AI_AUTH_HEADER: ${{ secrets.LOCAL_AI_AUTH_HEADER }}
+        run: python3 scripts/check.py
+      - name: Open or close alert issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create status --color B60205 --description "Service down alert" 2>/dev/null || true
+          jq -c '.[]' data/alerts.json | while read -r a; do
+            name=$(jq -r .name <<<"$a"); ev=$(jq -r .event <<<"$a"); det=$(jq -r .detail <<<"$a")
+            if [ "$ev" = down ]; then
+              gh issue create --label status --title "DOWN: $name" --body "$name failed two checks in a row ($det). This issue closes itself when it recovers."
+            else
+              n=$(gh issue list --label status --state open --search "in:title \"DOWN: $name\"" --json number -q '.[0].number')
+              [ -n "$n" ] && gh issue close "$n" --comment "Recovered ($det)."
+            fi
+          done
+      - name: Save results
+        run: |
+          rm -f data/alerts.json
+          git config user.name "status-bot"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/status.json
+          git commit -qm "status $(date -u +%H:%M)" && git push -q || echo "no change"

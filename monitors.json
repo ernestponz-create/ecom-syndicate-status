@@ -1,0 +1,10 @@
+[
+  {"id": "website",  "name": "Website",            "url": "https://ernestponz-create.github.io/ecom-syndicate/", "expect": [200]},
+  {"id": "quiz",     "name": "Lead quiz",          "url": "https://ernestponz-create.github.io/ecom-syndicate/quiz/", "expect": [200]},
+  {"id": "crm-site", "name": "CRM (sign-in page)", "url": "https://ernestponz-create.github.io/ecom-syndicate-crm/", "expect": [200]},
+  {"id": "crm-db",   "name": "CRM database",       "url_secret": "CRM_DB_CHECK_URL", "header_secret": {"apikey": "CRM_DB_CHECK_KEY"}, "expect": [200]},
+  {"id": "demo",     "name": "Demo store",         "url": "https://hearth-and-paw-demo.vercel.app/", "expect": [200, 401], "note": "password-protected, so 401 counts as up"},
+  {"id": "local-ai", "name": "Local AI server",    "url_secret": "LOCAL_AI_CHECK_URL", "header_secret": {"Authorization": "LOCAL_AI_AUTH_HEADER"}, "expect": [200]},
+  {"id": "n8n",      "name": "Automation server (n8n)", "url": "https://ecom-syndicate-n8n.onrender.com/healthz", "expect": [200], "daily_utc_hour": 6, "timeout": 180,
+   "note": "checked once a day only: it sleeps when idle to save free hosting hours, and a frequent check would keep it awake"}
+]

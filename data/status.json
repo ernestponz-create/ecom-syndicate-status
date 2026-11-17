@@ -1,0 +1,82 @@
+{
+ "checked_at": "2026-11-17T20:21:11Z",
+ "monitors": {
+  "website": {
+   "name": "Website",
+   "state": "up",
+   "response_ms": 111,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "quiz": {
+   "name": "Lead quiz",
+   "state": "up",
+   "response_ms": 37,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "crm-site": {
+   "name": "CRM (sign-in page)",
+   "state": "up",
+   "response_ms": 74,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "crm-db": {
+   "name": "CRM database",
+   "state": "up",
+   "response_ms": 232,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "demo": {
+   "name": "Demo store",
+   "state": "up",
+   "response_ms": 216,
+   "detail": "HTTP 401",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "password-protected, so 401 counts as up",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "local-ai": {
+   "name": "Local AI server",
+   "state": "up",
+   "response_ms": 975,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  },
+  "n8n": {
+   "name": "Automation server (n8n)",
+   "state": "up",
+   "response_ms": 184,
+   "detail": "HTTP 200",
+   "fails": 0,
+   "last_checked": "2026-11-17T20:21:11Z",
+   "note": "checked once a day only: it sleeps when idle to save free hosting hours, and a frequent check would keep it awake",
+   "alerting": false,
+   "since": "2026-11-17T20:21:11Z"
+  }
+ }
+}

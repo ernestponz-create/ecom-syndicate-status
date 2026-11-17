@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Ecom Syndicate status</title>
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;color:#1d1d1f}
+h1{font-size:1.5rem}.row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid #e5e5e5;border-radius:10px;margin:8px 0}
+.up{color:#137333}.down{color:#b3261e}.na{color:#777}.small{font-size:.85rem;color:#666}</style></head>
+<body><h1>The Ecom Syndicate status</h1><p id="summary" class="small">Loading...</p><div id="list"></div>
+<p class="small">Checked about every 15 minutes by GitHub Actions. The automation server is checked once a day.</p>
+<script>
+fetch("data/status.json?ts="+Date.now()).then(r=>r.json()).then(d=>{
+  const ms=Object.values(d.monitors); const down=ms.filter(m=>m.state==="down").length;
+  document.getElementById("summary").textContent=(down?down+" service(s) down":"All services up")+" · last check "+new Date(d.checked_at).toLocaleString("en-GB",{timeZone:"Asia/Jerusalem"})+" (Israel time)";
+  document.getElementById("list").innerHTML=ms.map(m=>{const c=m.state==="up"?"up":m.state==="down"?"down":"na";
+    return `<div class="row"><div><b>${m.name}</b><div class="small">${m.note||""}</div></div><div class="${c}"><b>${m.state.toUpperCase()}</b>${m.response_ms!=null?` <span class="small">${m.response_ms} ms</span>`:""}</div></div>`}).join("");
+}).catch(()=>{document.getElementById("summary").textContent="No data yet."});
+</script></body></html>
