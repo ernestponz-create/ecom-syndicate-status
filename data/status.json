@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-11-20T16:22:59Z",
+ "checked_at": "2026-11-20T22:44:55Z",
  "monitors": {
   "website": {
    "name": "Website",
    "state": "up",
-   "response_ms": 74,
+   "response_ms": 146,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -15,10 +15,10 @@
   "quiz": {
    "name": "Lead quiz",
    "state": "up",
-   "response_ms": 64,
+   "response_ms": 136,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -26,10 +26,10 @@
   "crm-site": {
    "name": "CRM (sign-in page)",
    "state": "up",
-   "response_ms": 1069,
+   "response_ms": 196,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -37,10 +37,10 @@
   "crm-db": {
    "name": "CRM database",
    "state": "up",
-   "response_ms": 848,
+   "response_ms": 972,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -48,10 +48,10 @@
   "demo": {
    "name": "Demo store",
    "state": "up",
-   "response_ms": 911,
+   "response_ms": 1008,
    "detail": "HTTP 401",
    "fails": 0,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "password-protected, so 401 counts as up",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -61,8 +61,8 @@
    "state": "down",
    "response_ms": null,
    "detail": "URLError",
-   "fails": 9,
-   "last_checked": "2026-11-20T16:22:59Z",
+   "fails": 10,
+   "last_checked": "2026-11-20T22:44:55Z",
    "note": "",
    "alerting": true,
    "since": "2026-11-18T02:30:39Z"
