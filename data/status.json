@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-11-24T04:39:19Z",
+ "checked_at": "2026-11-24T15:18:15Z",
  "monitors": {
   "website": {
    "name": "Website",
    "state": "up",
-   "response_ms": 51,
+   "response_ms": 106,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -15,10 +15,10 @@
   "quiz": {
    "name": "Lead quiz",
    "state": "up",
-   "response_ms": 43,
+   "response_ms": 86,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -26,10 +26,10 @@
   "crm-site": {
    "name": "CRM (sign-in page)",
    "state": "up",
-   "response_ms": 62,
+   "response_ms": 146,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -37,10 +37,10 @@
   "crm-db": {
    "name": "CRM database",
    "state": "up",
-   "response_ms": 757,
+   "response_ms": 653,
    "detail": "HTTP 200",
    "fails": 0,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -48,10 +48,10 @@
   "demo": {
    "name": "Demo store",
    "state": "up",
-   "response_ms": 901,
+   "response_ms": 1009,
    "detail": "HTTP 401",
    "fails": 0,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "password-protected, so 401 counts as up",
    "alerting": false,
    "since": "2026-11-17T20:21:11Z"
@@ -61,8 +61,8 @@
    "state": "down",
    "response_ms": null,
    "detail": "URLError",
-   "fails": 21,
-   "last_checked": "2026-11-24T04:39:19Z",
+   "fails": 22,
+   "last_checked": "2026-11-24T15:18:15Z",
    "note": "",
    "alerting": true,
    "since": "2026-11-18T02:30:39Z"
